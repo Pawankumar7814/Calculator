@@ -8,14 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
-    <script>
-        function add() {
-            i = parseInt(document.getElementsByClassName("t1")[0].value);
-            j = parseInt(document.getElementsByClassName("t2")[0].value);
-            k = i + j;
-            document.getElementsByClassName("answer")[0].value = k;
-        }
-    </script>
+
     <style>
         div {
             border: 2rem groove purple;
@@ -47,11 +40,14 @@
     <main>
         <section>
             <div class="container-fluid text-center ud">
-                <form action="/calculate" method="post">
-                    <input type="text" name="First_Value" class="t1" id="" placeholder="First Value"><br>
-                    <input type="text" name="Second_Value" class="t2" placeholder="Second Value"><br>
-                    <input type="text" name="Answer" class="answer" placeholder="Answer"><br>
-                    <input type="button" value="add" class="btn" onclick="add()">
+                <form action="" method="post">
+                    <input type="text" name="First_Value" class="t1" id="" placeholder="First Value" value="<%= v1 %>"><br>
+                    <input type="text" name="Second_Value" class="t2" placeholder="Second Value" value="<%= v2 %>"><br>
+                    <input type="text" name="Answer" class="answer" placeholder="Answer" value="<%= Answer %>"><br>
+                    <input type="submit" value="add" class="btn" formaction="/add">
+                    <input type="submit" value="sub" class="btn" formaction="/sub">
+                    <input type="submit" value="mul" class="btn" formaction="/mul">
+                    <input type="submit" value="div" class="btn" formaction="/div">
                 </form>
             </div>
         </section>
